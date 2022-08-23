@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&family=Roboto:wght@300&display=swap');
+
+@import "utilities/variables";
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: $color-principal;
+    .wp{
+        width: 3rem;
+        height: 3rem;
+        position: fixed;
+        bottom: 0.4rem;
+        right: 0.4rem;
+    }
+/*estilos index*/    
+}
+.contenedor{
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 1fr 1fr 0.5fr;
+
+    grid-template-areas:
+    "m-index"
+    "s-index"
+    "footer";
+    .m-index{
+        grid-area: m-index;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h1{
+            text-decoration-line: underline;
+        }
+        .img-index{
+            width: 60%;
+            justify-content: center;
+        }
+    }
+}
+.s-index{
+    grid-area: s-index;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h2{
+        text-decoration-line: underline;
+    }
+
+}
+footer{
+    grid-area: footer;
+    text-align: center;
+}
+/*estilos nosotros*/
+
+.contenedor-nosotros{
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns:auto ;
+    grid-template-rows: 1fr 1fr 0.5fr 0.5fr 0.5fr 0.3fr;
+    grid-template-areas: 
+    "m-nosotros"
+    "s-nosotros"
+    "img1-nosotros" 
+    "img2-nosotros" 
+    "img3-nosotros"
+    "footer" ;
+    .m-nosotros{
+        grid-area: m-nosotros;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .s-nosotros{
+        grid-area: s-nosotros;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        iframe{
+            width: 80%;
+            justify-self: center;
+        }
+    }
+    .img1-nosotros{
+        grid-area: img1-nosotros;
+        text-align: center;
+        .imgNosotros{
+            width: 80%;
+        }
+    }
+    .img2-nosotros{
+        grid-area: img2-nosotros;
+        text-align: center;
+    }
+    .img3-nosotros{
+        grid-area: img3-nosotros;
+        text-align: center;
+    }
+    .f-nosotros{
+        grid-area: footer;
+    }
+}
+
+/*medias queries */
+
+@media screen and (min-width:600px){
+
+    /*medias queries index*/
+    
+    .contenedor{
+        grid-template-rows: 1fr 0.2fr ;
+        
+        grid-template-areas:
+        "m-index s-index"
+        "footer footer";
+        font-size: 1.2rem;
+        margin-top: 3rem;
+        height: 60vh;
+    }
+
+    /*medias queries nosotros*/
+    .contenedor-nosotros{
+        height: 120vh;
+        grid-template-areas: 
+        "m-nosotros m-nosotros m-nosotros"
+        "s-nosotros s-nosotros s-nosotros"
+        "img1-nosotros img2-nosotros img3-nosotros"
+        "footer footer footer";
+    }
+}
+@media screen and (min-width:1024px){
+
+    /*medias queries index*/
+
+    .contenedor{
+    font-size: 1.5rem;
+    .img-index{
+        width: 70%;
+    }
+    }
+    .wp{
+        width: 6rem;
+        height: 6rem;
+    }  
+    footer{
+        margin-top: 8rem;
+    } 
+}
+ /*medias queries nosotros*/
+
+ .contenedor-nosotros{
+
+    grid-template-columns:1fr 1fr 1fr ;
+    grid-template-rows: 2fr 1.5fr 1fr 0.5fr;
+    grid-template-areas: 
+    "m-nosotros m-nosotros m-nosotros"
+    "s-nosotros s-nosotros s-nosotros"
+    "img1-nosotros img2-nosotros img3-nosotros"
+    "footer footer footer" ;
+    
+    row-gap: 3rem;
+    padding: 3rem;
+   }    
