@@ -72,6 +72,9 @@ footer{
         height: 14rem;
     }
 }
+footer{
+    margin-top: 20rem;
+}
 .comprar{
     display: inline-block;
     background-color: rgb(228, 168, 228);
@@ -81,8 +84,9 @@ footer{
 }
 .comprar:hover{
     transform: scale(1.2);
-
+    transition: 3s;
 }
+
 /*estilos nosotros*/
 .contenedor-nosotros{
     height: 100vh;
@@ -150,7 +154,9 @@ footer{
     border-radius: 10px;
 }
 .btnEnviar:hover{
-    transform: scale(1.2);
+    transform: scale(1.5);
+    transition: 3s;
+    
 }
 .f-contacto{
     margin-top: 23rem;
@@ -170,6 +176,7 @@ footer{
     }
     .btnAcceso:hover{
         transform: scale(1.2);
+        transition: 3s;
     }
 }
 .formulario{
