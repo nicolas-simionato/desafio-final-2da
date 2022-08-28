@@ -1,7 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&family=Roboto:wght@300&display=swap');
-
-@import "utilities/variables";
-
 *{
     margin: 0px;
     padding: 0px;
@@ -9,16 +6,20 @@
 }
 body{
     font-family: 'Roboto', sans-serif;
-    background-color: $color-principal;
-    .wp{
-        width: 3rem;
-        height: 3rem;
-        position: fixed;
-        bottom: 0.4rem;
-        right: 0.4rem;
-    }
-/*estilos index*/    
+    background-color: rgb(243, 234, 222);
+    height: 130vh;
 }
+.wp{
+    width: 3rem;
+    height: 3rem;
+    position: fixed;
+    bottom: 0.4rem;
+    right: 0.4rem;
+}
+footer{
+    text-align: center;
+}
+/*estilos index*/
 .contenedor{
     height: 100vh;
     width: 100%;
@@ -43,29 +44,52 @@ body{
             justify-content: center;
         }
     }
-}
-.s-index{
-    grid-area: s-index;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    h2{
-        text-decoration-line: underline;
+    .s-index{
+        grid-area: s-index;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h2{
+            text-decoration-line: underline;
+        }
+        .img-index{
+            width: 60%;
+            justify-content: center;
+        }
     }
-
+    footer{
+        grid-area: footer;
+        text-align: center;
+        margin-top: 5rem;
+    }
 }
-footer{
-    grid-area: footer;
-    text-align: center;
+/*estilos productos*/
+.container.row{
+    align-items: center;
+    margin-top: 3rem ;
+    .imgProductos{
+        width: 10rem;
+        height: 14rem;
+    }
+}
+.comprar{
+    display: inline-block;
+    background-color: rgb(228, 168, 228);
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 5px;
+}
+.comprar:hover{
+    transform: scale(1.2);
+
 }
 /*estilos nosotros*/
-
 .contenedor-nosotros{
     height: 100vh;
     width: 100%;
     display: grid;
     grid-template-columns:auto ;
-    grid-template-rows: 1fr 1fr 0.5fr 0.5fr 0.5fr 0.3fr;
+    grid-template-rows: 0.3fr 0.3fr 0.5fr 0.5fr 0.5fr 0.3fr;
     grid-template-areas: 
     "m-nosotros"
     "s-nosotros"
@@ -92,10 +116,8 @@ footer{
     .img1-nosotros{
         grid-area: img1-nosotros;
         text-align: center;
-        .imgNosotros{
-            width: 80%;
-        }
     }
+    
     .img2-nosotros{
         grid-area: img2-nosotros;
         text-align: center;
@@ -104,11 +126,59 @@ footer{
         grid-area: img3-nosotros;
         text-align: center;
     }
+    .imgNosotros{
+        width: 80%;
+    }
     .f-nosotros{
         grid-area: footer;
+        text-align: center;
     }
 }
-
+/*estilos contacto*/
+.contenedor-contacto{
+    display: flex;
+    flex-direction: column;
+    row-gap: 3rem;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+}
+.btnEnviar{
+    background-color: rgb(228, 168, 228);
+    border-radius: 10px;
+}
+.btnEnviar:hover{
+    transform: scale(1.2);
+}
+.f-contacto{
+    margin-top: 23rem;
+}
+/*estilos mi cuenta*/
+.btnMicuenta{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    .btnAcceso{
+        margin: 2rem;
+        list-style: none;
+        background-color: rgb(228, 168, 228);
+        border-radius: 10px;
+        text-decoration-line: underline;
+        font-size: 1.4rem;
+    }
+    .btnAcceso:hover{
+        transform: scale(1.2);
+    }
+}
+.formulario{
+    display: flex;
+    justify-content: center;
+}
+.f-micuenta{
+    margin-top: 25rem;
+}
 /*medias queries */
 
 @media screen and (min-width:600px){
@@ -121,6 +191,7 @@ footer{
         grid-template-areas:
         "m-index s-index"
         "footer footer";
+
         font-size: 1.2rem;
         margin-top: 3rem;
         height: 60vh;
@@ -129,11 +200,13 @@ footer{
     /*medias queries nosotros*/
     .contenedor-nosotros{
         height: 120vh;
+     
         grid-template-areas: 
         "m-nosotros m-nosotros m-nosotros"
         "s-nosotros s-nosotros s-nosotros"
         "img1-nosotros img2-nosotros img3-nosotros"
         "footer footer footer";
+
     }
 }
 @media screen and (min-width:1024px){
@@ -145,14 +218,15 @@ footer{
     .img-index{
         width: 70%;
     }
+    footer{
+        margin-top: 8rem;
+    } 
     }
     .wp{
         width: 6rem;
         height: 6rem;
     }  
-    footer{
-        margin-top: 8rem;
-    } 
+
 }
  /*medias queries nosotros*/
 
@@ -168,4 +242,4 @@ footer{
     
     row-gap: 3rem;
     padding: 3rem;
-   }    
+   }
