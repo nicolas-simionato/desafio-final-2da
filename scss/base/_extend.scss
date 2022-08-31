@@ -1,0 +1,9 @@
+%flex {
+    display: flex;
+    justify-content: center;
+}
+
+%hover{
+    transform: scale(1.5);
+    transition: 3s;
+}
